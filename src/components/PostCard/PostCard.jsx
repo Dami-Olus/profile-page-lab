@@ -22,7 +22,7 @@ function PostCard({ post }) {
         <Card.Description>{post.caption}</Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
-        <Icon name={"heart"} size="large" color={"grey"} />
+        <Icon name={"like"} size="large" color={"grey"} />
         {post.likes.length} Likes
       </Card.Content>
     </Card>

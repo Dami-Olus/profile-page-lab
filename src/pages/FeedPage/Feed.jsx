@@ -3,16 +3,18 @@ import PageHeader from "../../components/Header/Header";
 import AddPuppyForm from "../../components/AddPuppyForm/AddPuppyForm";
 import PostGallery from "../../components/PostGallery/PostGallery";
 
-import { Grid } from "semantic-ui-react";
+import { Divider, Grid } from "semantic-ui-react";
 
 // this will import all the functions from postApi, and attach to an object call postsApi
 import * as postsApi from "../../utils/postApi";
 
-export default function FeedPage() {
+export default function FeedPage({user}) {
   // The reasons we are setting posts state, is because then we can pass that data to the postgallery
   // where it will be rendered!
   const [posts, setPosts] = useState([]); // array of objects containing the likes as well)
   const [error, setError] = useState("");
+
+  console.log
 
   // EVERY TIME WE UPDATE STATE here, We will first make http request to the server 
   // to try and perform some CRUD operation.
@@ -57,9 +59,12 @@ export default function FeedPage() {
     <Grid centered>
       <Grid.Row>
         <Grid.Column>
-          <PageHeader />
+          <PageHeader user={user} />
+       
         </Grid.Column>
       </Grid.Row>
+      <Divider />
+    
       <Grid.Row>
         <Grid.Column style={{ maxWidth: 450 }}>
           <AddPuppyForm handleAddPost={handleAddPost}/>
