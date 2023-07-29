@@ -1,13 +1,15 @@
 import { Button, Header, Icon, Image, Segment } from "semantic-ui-react";
 import { Input, Menu } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import userService from "../../utils/userService";
 
 export default function PageHeader({ user }) {
+    const navigate = useNavigate()
 
   const handleLogout = async () => {
     try {
       await userService.logout();
+      navigate('/login')
       
     } catch (err) {
       console.log(err);
