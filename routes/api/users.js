@@ -20,7 +20,7 @@ router.post("/login", usersCtrl.login);
 // /api/users/frenchacking
 // /api/users/bobwier
 // api/users/jimhaff
-router.get('/:username', usersCtrl.profile);
+router.get("/:username", usersCtrl.profile);
 /*---------- Protected Routes ----------*/
 
 module.exports = router;

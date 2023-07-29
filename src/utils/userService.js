@@ -59,13 +59,13 @@ function login(creds) {
 }
 
 function getProfile(username){
- return fetch(BASE_URL + username, {
+ return fetch(`${BASE_URL}${username}`, {
   method: 'GET',
   headers: {
-    'Authorization': 'Bearer ' + tokenService.getToken()
+    Authorization: "Bearer " + tokenService.getToken()
   }
  }).then(res => {
-  if(res.ok) return res.json
+  if(res.ok) return res.json();
   throw new Error('Bad credentials')
  })
 }
