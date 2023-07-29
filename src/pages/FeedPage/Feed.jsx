@@ -14,7 +14,7 @@ export default function FeedPage({user}) {
   const [posts, setPosts] = useState([]); // array of objects containing the likes as well)
   const [error, setError] = useState("");
 
-  console.log
+  console.log(user)
 
   // EVERY TIME WE UPDATE STATE here, We will first make http request to the server 
   // to try and perform some CRUD operation.
