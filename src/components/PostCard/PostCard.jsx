@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, Icon, Image } from "semantic-ui-react";
 
 function PostCard({ post }) {
@@ -8,6 +9,8 @@ function PostCard({ post }) {
           floated="left"
           size="large"
           avatar
+          as={Link}
+          to={`/${post.user.username}`}
           src={
             post.user.photoUrl
               ? post.user.photoUrl

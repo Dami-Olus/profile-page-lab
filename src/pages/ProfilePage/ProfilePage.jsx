@@ -13,6 +13,7 @@ function ProfilePage({user}) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+
   const { userName } = useParams();
   console.log(userName);
 
@@ -33,7 +34,7 @@ function ProfilePage({user}) {
 
   useEffect(()=> {
     getProfile()
-  }, [])
+  }, [userName])
 
   console.log(posts);
        console.log(userState)

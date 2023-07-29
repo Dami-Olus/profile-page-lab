@@ -8,6 +8,7 @@ export default function PageHeader({ user }) {
   const handleLogout = async () => {
     try {
       await userService.logout();
+      
     } catch (err) {
       console.log(err);
     }
@@ -22,7 +23,7 @@ export default function PageHeader({ user }) {
           <Icon name="home" color="blue" />
         </Header>
         <Header as="h2" floated="right" color="blue">
-          <Button onClick={handleLogout} as={Link} to={'/'}>Logout</Button>
+          <Button onClick={handleLogout}>Logout</Button>
         </Header>
       </Header>
     </>
